@@ -135,7 +135,7 @@ export default function Home() {
       setVisibility(res.visibility);
 
       
-    } catch (error: any) {
+    } catch (error:any) {
       console.log(error.message);
     }
   };
