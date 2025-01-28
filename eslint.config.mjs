@@ -16,7 +16,10 @@ const eslintConfig = [
   // Add custom rules
   {
     rules: {
-      "@typescript-eslint/no-implicit-any":"off", // You can also use "error" with allowExplicitAny
+      "@typescript-eslint/no-implicit-any":["off"],
+      "no-implicit-any":[
+        "off"
+      ] // You can also use "error" with allowExplicitAny
     },
   },
 ];
