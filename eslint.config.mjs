@@ -15,14 +15,8 @@ const eslintConfig = [
 
   // Add custom rules
   {
-    files: ["/.ts", "/.tsx"],
     rules: {
-      "@typescript-eslint/no-implicit-any-catch": [
-        "off", // You can also use "error" with allowExplicitAny
-        {
-          allowExplicitAny: true,
-        },
-      ],
+      "@typescript-eslint/no-implicit-any":"off", // You can also use "error" with allowExplicitAny
     },
   },
 ];
