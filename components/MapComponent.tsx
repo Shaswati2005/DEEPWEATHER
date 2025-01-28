@@ -7,7 +7,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
-let DefaultIcon = L.icon({
+const DefaultIcon = L.icon({
     iconUrl: icon.src,
     shadowUrl: iconShadow.src
 });
@@ -22,6 +22,7 @@ interface MapProps {
 const MapComponent: React.FC<MapProps> = ({ center = [51.505, -0.09], zoom = 13 }) => {
     const [mapInstance, setMapInstance] = useState<L.Map | null>(null);
     const mapRef = useRef<L.Map | null>(null);
+    console.log(mapInstance);
 
     useEffect(() => {
         if (mapRef.current) {
@@ -34,7 +35,7 @@ const MapComponent: React.FC<MapProps> = ({ center = [51.505, -0.09], zoom = 13 
         useEffect(() => {
             map.locate().on("locationfound", function (e) {
                 map.flyTo(e.latlng, map.getZoom())
-                let radius = e.accuracy / 2;
+                const radius = e.accuracy / 2;
                 L.circle(e.latlng, radius).addTo(map)
             })
         }, [map])

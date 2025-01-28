@@ -1,21 +1,20 @@
 "use client"
 
 import Image from "next/image";
-import Day from "@/components/Day";
 import { useState, useEffect  } from "react";
 import Display from "@/components/Display";
 import Button from "@/components/Button";
 import Cards from "@/components/Cards";
 import Day1 from "@/components/Day1";
-import { time } from "console";
+//import { time } from "console";
 
 
 
-interface GeocodingResult {
-  lat: number;
-  lon: number;
-  display_name?: string; // Optional display name
-}
+//interface GeocodingResult {
+ // lat: number;
+ // lon: number;
+  //display_name?: string; // Optional display name
+//}
 
 
 
@@ -69,11 +68,11 @@ export default function Home() {
   const [value,setValue] = useState<number>(0);
   const [visibility,setVisibility] = useState<number>(0);
   const [timestamp,setTimestamp] = useState<number>(0);
-  const [day,setDay] = useState<string>("mon day");
+  //const [day,setDay] = useState<string>("mon day");
   const [days_weather, setDays_weather] = useState<WeatherData[]>([]);
   const [forecast,setForecast] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  //const [isLoading, setIsLoading] = useState(false);
+  //const [error, setError] = useState<string | null>(null);
 
 
 
@@ -118,6 +117,7 @@ export default function Home() {
       const res2= await response2.json(); 
       setDays_weather(res2.list);
       setForecast(res2.list);
+      console.log(weather);
 
       
       
@@ -171,11 +171,13 @@ const unixToDateTimeParts = (timestamp: number) => {
   try {
     const date = new Date(timestamp * 1000);
     const dayName = date.toLocaleString('default', { weekday: 'long' }); // Full day name
-    const dayOfMonth = date.toLocaleString('default', { day: '2-digit' });
-    const month = date.toLocaleString('default', { month: 'long' }); // Full month name
-    const year = date.getFullYear();
+    //const dayOfMonth = date.toLocaleString('default', { day: '2-digit' });
+    //const month = date.toLocaleString('default', { month: 'long' }); // Full month name
+    //const year = date.getFullYear();
+    setTimestamp(timestamp);
     return dayName;
-  } catch (e) {
+  } catch (e:any) {
+    
     return  "monday";
   }
 };

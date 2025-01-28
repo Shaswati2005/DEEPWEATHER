@@ -8,7 +8,7 @@ interface ButtonProps{
 
 }
 
-const bg= ['/cloudy.svg','/rainy.svg','/snowy.svg','/thunder.svg']
+//const bg= ['/cloudy.svg','/rainy.svg','/snowy.svg','/thunder.svg']
 
 const Button:React.FC<ButtonProps> = (props) => {
   return (
