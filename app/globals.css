@@ -19,3 +19,69 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+.cloud1 {
+    position: fixed;
+    top: 4%;
+    animation: cloudAnim 20s linear infinite;
+  }
+  @keyframes cloudAnim {
+    0% {
+      left: -50%;
+    }
+    100% {
+      left: 150%;
+    }
+}
+
+.cloud2 {
+  position: fixed;
+  top: 20%;
+  animation: cloudAnim 30s linear infinite;
+}
+@keyframes cloudAnim {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+
+.cloud3 {
+  position: fixed;
+  top: 60%;
+  animation: cloudAnim 25s linear infinite;
+}
+@keyframes cloudAnim {
+  0% {
+    right: -50%;
+  }
+  100% {
+    right: 150%;
+  }
+}
+.sun{
+  position: fixed;
+  top: 0%;
+  left: 10%;
+  
+}
+
+.cloud4 {
+  position: fixed;
+  top: 85%;
+  animation: cloudAnim 35s linear infinite;
+}
+@keyframes cloudAnim {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+
