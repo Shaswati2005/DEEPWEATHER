@@ -135,8 +135,8 @@ export default function Home() {
       setVisibility(res.visibility);
 
       
-    } catch (error:any) {
-      console.log(error.message);
+    } catch (error:unknown) {
+      console.log(error);
     }
   };
 
@@ -176,7 +176,7 @@ const unixToDateTimeParts = (timestamp: number) => {
     //const year = date.getFullYear();
     setTimestamp(timestamp);
     return dayName;
-  } catch (e:any) {
+  } catch (e:unknown) {
     console.log(e);
     return "monday";
   }
