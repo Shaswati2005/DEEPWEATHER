@@ -177,8 +177,8 @@ const unixToDateTimeParts = (timestamp: number) => {
     setTimestamp(timestamp);
     return dayName;
   } catch (e:any) {
-    
-    return  "monday";
+    console.log(e);
+    return "monday";
   }
 };
 

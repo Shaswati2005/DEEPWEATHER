@@ -10,7 +10,21 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  // Extend Next.js ESLint configurations
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+
+  // Add custom rules
+  {
+    files: ["/.ts", "/.tsx"],
+    rules: {
+      "@typescript-eslint/no-implicit-any-catch": [
+        "off", // You can also use "error" with allowExplicitAny
+        {
+          allowExplicitAny: true,
+        },
+      ],
+    },
+  },
 ];
 
 export default eslintConfig;
